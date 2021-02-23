@@ -1,7 +1,7 @@
-#N canvas 232 186 1370 710 10;
+#N canvas 0 61 1920 994 10;
 #X obj 552 545 dac~ 1 2;
 #X obj 392 139 adc~ 1;
-#N canvas 451 397 450 400 monitor 0;
+#N canvas 453 401 450 425 monitor 0;
 #X obj 91 88 notein, f 21;
 #X floatatom 91 111 5 0 0 0 - - -, f 5;
 #X floatatom 152 111 5 0 0 0 - - -, f 5;
@@ -27,7 +27,7 @@
 #X obj 392 237 REC 1 10000;
 #X text 25 65 - get MIDI in \, parse \, and forward to patch instructions
 ;
-#N canvas 157 145 1312 643 get-controls 0;
+#N canvas 159 149 1312 668 get-controls 0;
 #X obj 24 18 notein, f 7;
 #X obj 65 178 midi-id_to_internal-message;
 #X obj 65 146 pack f f;
@@ -40,5 +40,8 @@
 #X connect 3 0 2 1;
 #X connect 3 1 2 0;
 #X restore 25 82 pd get-controls;
+#X obj 710 230 REC-b 2 10000;
 #X connect 1 0 4 0;
+#X connect 1 0 7 0;
 #X connect 4 0 0 0;
+#X connect 7 0 0 1;
